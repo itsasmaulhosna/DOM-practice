@@ -4,21 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Manipulation</title>
+    <style>
+      #food {
+        color: orange;
+      }
+      h1 {
+        color: blue;
+      }
+      p {
+        color: green;
+      }
+      li {
+        color: red;
+      }
+    </style>
   </head>
   <body>
-    <h1>DOM Manipulation Example</h1>
-    <h1>This is a heading</h1>
+    <section>
+      <h1>DOM Manipulation Example</h1>
+      <h1>This is a heading</h1>
 
-    <p>This is a paragraph.</p>
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-    </ul>
+      <p>This is a paragraph.</p>
+      <ul>
+        <li>Item 1</li>
+        <li class="forigen">Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </section>
+    <section>
+      <h1 id="food">Food heading</h1>
+      <p>This is a food paragraph.</p>
+      <ul>
+        <li id="like">Pizza</li>
+        <li>Burger</li>
+        <li class="forigen">Pasta</li>
+        <li class="forigen">Salad</li>
+        <li class="forigen">Sushi</li>
+      </ul>
+    </section>
     <script>
       //   console.log('DOM Manipulation Example');
       //   console.log('This is a paragraph.');
 
+      //   by tag name
       const licollection = document.getElementsByTagName('li');
       console.log(licollection);
       for (const li of licollection) {
@@ -32,6 +60,13 @@
       for (const p of peragraphs) {
         console.log(p.innerText);
       }
+
+      //   by id
+      const foodHeading = document.getElementById('food');
+      console.log(foodHeading.innerText);
+
+      const likeFood = document.getElementById('like');
+      likeFood.innerText = 'I like Pizza';
     </script>
   </body>
 </html>
