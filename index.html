@@ -31,7 +31,17 @@
         <li>Item 3</li>
       </ul>
     </section>
-    <section class="food-items">
+    <section id="old" class="food-items">
+      <h3>
+        Lorem ipsum dolor sit amet,<span>old</span> consectetur<span>hert</span>
+        adipisicing elit. Temporibus quidem tempora est?
+      </h3>
+      <p>
+        Lorem, ipsum dolor<span>hello</span> sit amet consectetur<span
+          >oligoli</span
+        >
+        adipisicing elit. Distinctio, iusto.
+      </p>
       <h1 id="food">Food heading</h1>
       <p>This is a food paragraph.</p>
       <ul>
@@ -73,6 +83,12 @@
       console.log(forignItems);
       for (const item of forignItems) {
         console.log(item.innerText);
+      }
+
+      //   query selector
+      const spanElements = document.querySelectorAll('#old span');
+      for (const span of spanElements) {
+        console.log(span.innerText);
       }
     </script>
   </body>
