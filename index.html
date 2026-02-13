@@ -31,7 +31,7 @@
         <li>Item 3</li>
       </ul>
     </section>
-    <section>
+    <section class="food-items">
       <h1 id="food">Food heading</h1>
       <p>This is a food paragraph.</p>
       <ul>
@@ -67,6 +67,13 @@
 
       const likeFood = document.getElementById('like');
       likeFood.innerText = 'I like Pizza';
+
+      //   by class name
+      const forignItems = document.getElementsByClassName('forigen');
+      console.log(forignItems);
+      for (const item of forignItems) {
+        console.log(item.innerText);
+      }
     </script>
   </body>
 </html>
