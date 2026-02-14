@@ -10,6 +10,14 @@
     <p>Click the button to see an alert.</p>
     <!-- on click -->
     <button onclick="console.log(34)">Click me!</button>
+    <button onclick="makeRed()">Make red</button>
+    <br />
+    <button id="blue-btn">Make blue</button>
     <script src="../js/events.js"></script>
+    <script>
+      function makeRed() {
+        document.body.style.backgroundColor = 'red';
+      }
+    </script>
   </body>
 </html>
