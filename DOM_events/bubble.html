@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble</title>
+    <style>
+      body {
+        border: 1px solid black;
+        margin: 2px;
+      }
+
+      section {
+        border: 1px solid rgb(162, 61, 61);
+        margin: 2px;
+      }
+
+      ol {
+        border: 1px solid rgb(23, 23, 123);
+        margin: 2px;
+      }
+
+      li {
+        border: 1px solid rgb(159, 21, 122);
+        margin: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Event Bubbling</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <section id="section">
+      <h1>Bubble Example</h1>
+      <ol id="list-items">
+        <li id="first">First</li>
+        <li id="second">Second</li>
+        <li id="third">Third</li>
+        <li id="fourth">Fourth</li>
+        <li id="fifth">Fifth</li>
+      </ol>
+    </section>
+    <script>
+      document.getElementById('second').addEventListener('click', function () {
+        console.log('second clicked');
+      });
+
+      //   ol click hendeler
+      document
+        .getElementById('list-items')
+        .addEventListener('click', function () {
+          console.log('ol clicked');
+        });
+
+      // section click hendeler
+      document.getElementById('section').addEventListener('click', function () {
+        console.log('section clicked');
+      });
+    </script>
+  </body>
+</html>
