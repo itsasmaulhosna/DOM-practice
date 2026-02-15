@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment</title>
+    <style>
+      .comment {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: bisque;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Comment Section</h1>
+    <p>This is a comment section. Please leave your comments below.</p>
+
+    <section>
+      <h2>Comments</h2>
+      <p>No comments yet. Be the first to comment!</p>
+      <div id="comments-container">
+        <p class="comment">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque
+          adipisci, reiciendis porro atque aperiam illum saepe magnam?
+          Voluptatem, veniam! Similique iusto sunt consectetur consequuntur eius
+          repudiandae, inventore officia tempore aperiam atque fugiat nostrum.
+          Tempore iste animi doloremque vel sint assumenda labore enim
+          recusandae, eos modi delectus corporis iusto eum eius!
+        </p>
+        <p class="comment">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+          eligendi vero corrupti natus perspiciatis! Placeat voluptates
+          perspiciatis ex adipisci inventore quibusdam quae modi qui quos,
+          cumque amet aliquam incidunt dignissimos magnam distinctio. Placeat
+          repellendus excepturi nostrum voluptates quam eligendi distinctio, ad,
+          tempore hic velit explicabo culpa assumenda enim? Laboriosam, natus.
+        </p>
+        <p class="comment">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+          eligendi vero corrupti natus perspiciatis! Placeat voluptates
+          perspiciatis ex adipisci inventore quibusdam quae modi qui quos,
+          cumque amet aliquam incidunt dignissimos magnam distinctio. Placeat
+          repellendus excepturi nostrum voluptates quam eligendi distinctio, ad,
+          tempore hic velit explicabo culpa assumenda enim? Laboriosam, natus.
+        </p>
+      </div>
+      <br />
+      <!-- <form> -->
+      <textarea
+        name="comment"
+        id="comment-text-box"
+        cols="30"
+        rows="5"
+        placeholder="Write your comment here..."
+      ></textarea>
+      <br />
+      <button id="submitBtn">Submit</button>
+      <!-- </form> -->
+    </section>
+    <script>
+      // Add event listener to the submit button
+      document
+        .getElementById('submitBtn')
+        .addEventListener('click', function () {
+          //   console.log('Comment submitted!');
+          //  Get the comment from the textarea
+          const commentText = document.getElementById('comment-text-box');
+          // Create a new paragraph element for the comment
+          const newComment = commentText.value;
+          //get the parent container for the comments
+          const commentContainer =
+            document.getElementById('comments-container');
+          console.log(commentContainer);
+          // Create a new paragraph element for the comment
+          const commentP = document.createElement('p');
+          commentP.innerText = newComment;
+          //   append the new comment to the comment container
+          commentContainer.appendChild(commentP);
+          commentP.classList.add('comment');
+          // Clear the textarea after submitting the comment
+          commentText.value = '';
+        });
+    </script>
+  </body>
+</html>
