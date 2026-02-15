@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More Events</title>
+  </head>
+  <body>
+    <button id="btn-mouse">Show Alert</button>
+    <input type="text" id="user-name" placeholder="Enter your name" />
+    <script>
+      document
+        .getElementById('btn-mouse')
+        .addEventListener('mouseout', function () {
+          console.log('event triggered');
+        });
+
+      document
+        .getElementById('user-name')
+        .addEventListener('focus', function () {
+          console.log('Input field focused');
+        });
+
+      document
+        .getElementById('user-name')
+        .addEventListener('blur', function () {
+          console.log('Input field not focused');
+        });
+
+      document
+        .getElementById('user-name')
+        .addEventListener('keydown', function (event) {
+          console.log('typing', event.target.value);
+        });
+
+      document
+        .getElementById('user-name')
+        .addEventListener('keyup', function (event) {
+          console.log('typing', event.target.value);
+        });
+    </script>
+  </body>
+</html>
