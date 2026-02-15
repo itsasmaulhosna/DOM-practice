@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delegate html</title>
+  </head>
+  <body>
+    <h1>Event Delegation</h1>
+    <ol id="item-list">
+      <li class="item">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item 3</li>
+      <li class="item">Item 4</li>
+      <li class="item">Item 5</li>
+    </ol>
+    <button id="add-item">Add Item</button>
+    <script>
+      // child hendeler -not use for button
+      const items = document.getElementsByClassName('item');
+      for (const item of items) {
+        item.addEventListener('click', function (event) {
+          event.target.parentNode.removeChild(event.target);
+        });
+      }
+
+      // parent hendeler - use for button and new items
+      document
+        .getElementById('item-list')
+        .addEventListener('click', function (event) {
+          //   console.log(event.target);
+          event.target.parentNode.removeChild(event.target);
+        });
+      //   add a new item to the list
+      document
+        .getElementById('add-item')
+        .addEventListener('click', function () {
+          //parent element
+          const ol = document.getElementById('item-list');
+          //   new list item
+          const li = document.createElement('li');
+          li.innerText = 'New Item';
+          li.classList.add('item');
+          //   add the items
+          ol.appendChild(li);
+        });
+    </script>
+  </body>
+</html>
