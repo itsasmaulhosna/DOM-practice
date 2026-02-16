@@ -6,9 +6,16 @@
     <title>GitHub delete</title>
   </head>
   <body>
+    <!-- 1st -->
     <h1 id="secret-info">GitHub Delete Example</h1>
     <input type="text" id="input-delete" placeholder="write delete" />
     <button id="delete-btn" disabled>Delete</button>
+
+    <!-- 2nd -->
+
+    <h1 id="info">You have to delete</h1>
+    <input id="input" type="text" placeholder="write delete" />
+    <button id="btn" disabled>Please click</button>
 
     <script>
       document
@@ -24,6 +31,23 @@
           } else {
             console.log('delete button disabled');
             deleteBtn.setAttribute('disabled', '');
+          }
+        });
+
+      // 2nd
+      document
+        .getElementById('input')
+        .addEventListener('keyup', function (event) {
+          const information = event.target.value;
+          const dlt = document.getElementById('btn');
+          const text = document.getElementById('info');
+          if (information === 'delete') {
+            console.log('delete');
+            dlt.removeAttribute('disabled');
+            info.style.display = 'none';
+          } else {
+            console.log('not delete');
+            dlt.setAttribute('disabled');
           }
         });
     </script>
